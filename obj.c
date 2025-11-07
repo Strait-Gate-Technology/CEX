@@ -19,6 +19,7 @@ OBJ* cex_copy_obj(OBJ* O)
     OBJ* new_obj;
     new_obj = OBJ(O->len);
     memcpy(new_obj->dat, O->dat, O->len);
+    new_obj->free = O->free;
     return new_obj;
 }
 
