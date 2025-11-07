@@ -9,14 +9,16 @@
 #define STRCPY(S) cex_copy_str(S)
 
 /* String */
-typedef struct {
-    OBJ * self;
-    char * str;
+typedef struct cex_str {
+    OBJ* self;
+    char* str;
     size_t len;
+    void (*free)(struct cex_str*);
 } STR;
 
 /* String methods */
-STR * cex_make_str(char * s);
-STR * cex_copy_str(STR * S);
+STR* cex_make_str(char* s);
+STR* cex_copy_str(STR* S);
+STR* cex_free_str(STR* S);
 
 #endif // CEX_STR_H

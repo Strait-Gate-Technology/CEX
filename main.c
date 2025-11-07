@@ -1,26 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "cex/num.h"
 #include "cex/obj.h"
 #include "cex/str.h"
-#include "cex/num.h"
 
 int main()
 {
-    STR * name = STR("Alex");
-    STR * copy = STRCPY(name);
-    NUM * age = NUM(24);
+    STR* name = STR("Alex");
+    STR* copy = STRCPY(name);
+    NUM* age = NUM(24);
 
     printf("Hello %s\n", name->str);
     printf("The copy of your name is %s\n", copy->str);
     printf("The value of your age is %d\n", age->nums[0]);
 
-    FREE(name->self);
-    FREE(copy->self);
-    FREE(age->self);
+    FREE(name);
+    FREE(copy);
 
-    free(name);
-    free(copy);
+    FREE(age->self);
     free(age);
 
     return 0;
