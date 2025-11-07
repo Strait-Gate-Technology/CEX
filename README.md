@@ -2,11 +2,10 @@
 
 ## TODO
 
-- Consider making COPY a similar macro to FREE which really passes a reference to OBJ's self and calls an internal ->copy() method,
-- Once this is done for ->copy() and ->free(), consider string processing cases or move straight to WEB.
 - Create generics for ADD, SUB, MUL, DIV, such that they call corresponding ->add(), ->sub(), so on; with 2 parameters,
 - Create MAT \* matrix type. Apply generics to these matrices as well.
 - Creates "vectors" but like dynamic array containers for OBJ. Maybe call them VEC\* and allow pushing and popping with the generics PUSH() and POP().
+- Once this is done for ->copy() and ->free(), consider string processing cases or move straight to WEB.
 
 Think about...
 
