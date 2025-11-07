@@ -9,7 +9,7 @@ int main()
 {
     STR* name = STR("Alex");
     STR* copy = STRCPY(name);
-    NUM* age = NUM(_128bit);
+    NUM* age = NUM(24);
 
     printf("Hello %s\n", name->str);
     printf("The copy of your name is %s\n", copy->str);
