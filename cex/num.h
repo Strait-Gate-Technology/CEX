@@ -19,6 +19,7 @@ typedef struct cex_num {
 
 /* Number methods */
 NUM* cex_make_num(size_t n);
+NUM* cex_copy_num(NUM* N);
 void cex_free_num(NUM* N);
 
 #endif // CEX_NUM_H
