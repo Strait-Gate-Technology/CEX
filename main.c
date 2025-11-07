@@ -17,9 +17,7 @@ int main()
 
     FREE(name);
     FREE(copy);
-
-    FREE(age->self);
-    free(age);
+    FREE(age);
 
     return 0;
 }
