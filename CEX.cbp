@@ -19,7 +19,19 @@
 				<Option compiler="gcc-mingw64" />
 			</Target>
 		</Build>
+		<Unit filename="cex/num.h" />
+		<Unit filename="cex/obj.h" />
+		<Unit filename="cex/str.h" />
 		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="num.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="obj.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="str.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions />
