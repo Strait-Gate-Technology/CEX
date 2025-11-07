@@ -1,0 +1,28 @@
+#include "cex/obj.h"
+
+/* Standard C Library */
+#include <stdlib.h>
+#include <string.h>
+
+OBJ * cex_make_obj(size_t len)
+{
+    OBJ * new_obj;
+    new_obj = malloc(sizeof(OBJ));
+    new_obj->dat = malloc(len);
+    new_obj->len = len;
+    return new_obj;
+}
+
+OBJ * cex_copy_obj(OBJ * O)
+{
+    OBJ * new_obj;
+    new_obj = OBJ(O->len);
+    memcpy(new_obj->dat, O->dat, O->len);
+    return new_obj;
+}
+
+void cex_free_obj(OBJ * O)
+{
+    free(O->dat);
+    free(O);
+}
