@@ -19,6 +19,6 @@ typedef struct cex_str {
 /* String methods */
 STR* cex_make_str(char* s);
 STR* cex_copy_str(STR* S);
-STR* cex_free_str(STR* S);
+void cex_free_str(STR* S);
 
 #endif // CEX_STR_H
