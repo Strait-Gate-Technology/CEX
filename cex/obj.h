@@ -6,13 +6,14 @@
 
 /* Shorthand Macros */
 #define OBJ(len) cex_make_obj(len)
-#define COPY(O) cex_copy_obj(O)
+#define COPY(O) O->copy(O)
 #define FREE(O) O->free(O)
 
 /* Object Struct */
 typedef struct cex_obj {
     void* dat;
     size_t len;
+    struct cex_obj* (*copy)(struct cex_obj*);
     void (*free)(struct cex_obj*);
 } OBJ;
 
