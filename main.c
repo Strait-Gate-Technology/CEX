@@ -8,7 +8,7 @@
 int main()
 {
     STR* name = STR("Alex");
-    STR* copy = STRCPY(name);
+    STR* copy = COPY(name);
     NUM* age = NUM(24);
 
     printf("Hello %s\n", name->str);

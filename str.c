@@ -12,6 +12,7 @@ STR* cex_make_str(char* s)
     new_str->str = new_str->self->dat;
     strcpy(new_str->str, s);
     new_str->len = strlen(s);
+    new_str->copy = cex_copy_str;
     new_str->free = cex_free_str;
     return new_str;
 }
@@ -23,6 +24,7 @@ STR* cex_copy_str(STR* S)
     new_str->self = COPY(S->self);
     new_str->str = new_str->self->dat;
     new_str->len = new_str->self->len - 1;
+    new_str->copy = S->copy;
     new_str->free = S->free;
     return new_str;
 }

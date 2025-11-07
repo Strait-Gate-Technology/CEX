@@ -6,13 +6,13 @@
 
 /* Shorthand Macros */
 #define STR(s) cex_make_str(s)
-#define STRCPY(S) cex_copy_str(S)
 
 /* String */
 typedef struct cex_str {
     OBJ* self;
     char* str;
     size_t len;
+    struct cex_str* (*copy)(struct cex_str*);
     void (*free)(struct cex_str*);
 } STR;
 
