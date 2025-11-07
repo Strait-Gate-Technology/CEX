@@ -12,6 +12,7 @@ typedef struct cex_num {
     OBJ* self;
     int* nums;
     size_t len;
+    struct cex_num* (*copy)(struct cex_num*);
     void (*free)(struct cex_num*);
 } NUM;
 
