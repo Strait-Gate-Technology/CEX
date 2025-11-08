@@ -12,6 +12,7 @@ typedef struct cex_num {
     OBJ* self;
     int* nums;
     size_t len;
+    void (*add)(struct cex_num*, struct cex_num*);
     struct cex_num* (*copy)(struct cex_num*);
     void (*free)(struct cex_num*);
 } NUM;
@@ -20,5 +21,8 @@ typedef struct cex_num {
 NUM* cex_make_num(int i);
 NUM* cex_copy_num(NUM* N);
 void cex_free_num(NUM* N);
+
+/* Arithmetic */
+void cex_add_nums(NUM* A, NUM* B);
 
 #endif // CEX_NUM_H

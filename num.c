@@ -34,3 +34,16 @@ void cex_free_num(NUM* N)
     FREE(N->self);
     free(N);
 }
+
+/* Little endian */
+void cex_add_nums(NUM* A, NUM* B)
+{
+    int i, aWasPos, bWasPos;
+
+    aWasPos = (A->nums[0] >= 0);
+    bWasPos = (B->nums[0] >= 0);
+    for (i = 0; i < A->len && i < B->len; A->nums[i] += B->nums[i], i++) {
+        aWasPos = (A->nums[i] >= 0);
+        bWasPos = (B->nums[i] >= 0);
+    }
+}
