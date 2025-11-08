@@ -1,5 +1,38 @@
 # C-Extension (CEX)
 
+## Synopsis
+C does not lack agility or implementation ideas to be better; it needs a central gathering point and a unified vision of how commonly re-coded utilities and library tools should be designed and used.
+
+Once the pattern is established and enough usefulness accumulates in one place, it becomes more valuable than the sum of its parts to learn, follow and build off of what it offers.
+
+## Examples
+```c
+#include <cex/obj.h>
+#include <cex/str.h>
+#include <cex/mat.h>
+
+int main()
+{
+  STR * name = STR("Alex");
+  STR * copy = COPY(name);
+
+  MAT * A = MAT(ROW(1,2,3));
+  MAT * B = MAT(COL(4,5,6));
+  MAT * C = MUL(A,B);
+
+  printf("Hi, your name is %s\n", name->str);
+  printf("The result of A*B = %s\n", C->str);
+
+  FREE(name);
+  FREE(copy);
+  FREE(A);
+  FREE(B);
+  FREE(C);
+
+  return 0;
+}
+```
+
 ## TODO
 
 - Create generics for ADD, SUB, MUL, DIV, such that they call corresponding ->add(), ->sub(), so on; with 2 parameters,
