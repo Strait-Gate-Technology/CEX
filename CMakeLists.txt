@@ -8,3 +8,6 @@ set(SRC main.c num.c obj.c str.c)
 
 add_executable(${PROJECT_NAME} ${SRC})
 target_include_directories(${PROJECT_NAME} PUBLIC .)
+
+target_compile_options(${PROJECT_NAME} PUBLIC "-fsanitize=address" "-g")
+target_link_options(${PROJECT_NAME} PUBLIC "-fsanitize=address" "-g")
