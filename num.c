@@ -36,6 +36,7 @@ NUM* cex_copy_num(NUM* N)
 void cex_resz_num(NUM* N, size_t len)
 {
     RESZ(N->self, len * sizeof(unsigned int));
+    N->nums = N->self->dat;
     N->len = len;
 }
 
