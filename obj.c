@@ -27,7 +27,7 @@ OBJ* cex_copy_obj(OBJ* O)
 
 void cex_resz_obj(OBJ* O, size_t len)
 {
-    realloc(O->dat, len);
+    O->dat = realloc(O->dat, len);
     O->len = len;
 }
 
