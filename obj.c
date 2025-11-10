@@ -11,6 +11,7 @@ OBJ* cex_make_obj(size_t len)
     new_obj->dat = malloc(len);
     new_obj->len = len;
     new_obj->copy = cex_copy_obj;
+    new_obj->resz = cex_resz_obj;
     new_obj->free = cex_free_obj;
     return new_obj;
 }
@@ -21,6 +22,7 @@ OBJ* cex_copy_obj(OBJ* O)
     new_obj = OBJ(O->len);
     memcpy(new_obj->dat, O->dat, O->len);
     new_obj->copy = O->copy;
+    new_obj->resz = O->resz;
     new_obj->free = O->free;
     return new_obj;
 }
