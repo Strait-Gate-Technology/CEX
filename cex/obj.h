@@ -7,7 +7,7 @@
 /* Shorthand Macros */
 #define OBJ(len) cex_make_obj(len)
 #define COPY(O) O->copy(O)
-#define RESIZE(O, len) O->resize(O, len)
+#define RESZ(O, len) O->resz(O, len)
 #define FREE(O) O->free(O)
 
 /* Object Struct */
@@ -22,7 +22,7 @@ typedef struct cex_obj {
 /* Object methods */
 OBJ* cex_make_obj(size_t len);
 OBJ* cex_copy_obj(OBJ* O);
-void cex_resize_obj(OBJ* O, size_t len);
+void cex_resz_obj(OBJ* O, size_t len);
 void cex_free_obj(OBJ* O);
 
 #endif // CEX_OBJ_H

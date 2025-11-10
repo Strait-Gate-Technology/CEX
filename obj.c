@@ -25,7 +25,7 @@ OBJ* cex_copy_obj(OBJ* O)
     return new_obj;
 }
 
-void cex_resize_obj(OBJ* O, size_t len)
+void cex_resz_obj(OBJ* O, size_t len)
 {
     realloc(O->dat, len);
     O->len = len;
