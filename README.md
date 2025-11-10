@@ -109,6 +109,7 @@ This is very much like what a lot of object models propose without being utter g
 - Consider how types like NUM() can be visually displayed or stringified such that debugging or size-stepping their value easily is possible. Ideas like NUM->val or NUM->str are good.
 - Creates "vectors" but like dynamic array containers for OBJ. Maybe call them VEC\* and allow pushing and popping with the generics PUSH() and POP().
 - Try and compile (convert) the project to be C89 compliant...may not be possible with certain design goals in mind.
+- Think of how to make a 'FREE_ALL()' short hand. Does this now involve garbage collection? The use of 'DEFER()'? This doesn't seem to help...
 - Create remaining generics for NUM (i.e. SUB(), MUL(), etc.) after ADD() is now here.
 - Create MAT \* matrix type. Apply generics to these matrices as well.
 - Once this is done for ->copy() and ->free(), consider string processing cases or move straight to WEB.
