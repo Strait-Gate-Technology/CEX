@@ -12,6 +12,7 @@ NUM* cex_make_num(int i)
     new_num->nums = new_num->self->dat;
     new_num->nums[0] = i;
     new_num->len = 1;
+    new_num->add = cex_add_nums;
     new_num->copy = cex_copy_num;
     new_num->resz = cex_resz_num;
     new_num->free = cex_free_num;
@@ -25,6 +26,7 @@ NUM* cex_copy_num(NUM* N)
     new_num->self = COPY(N->self);
     new_num->nums = new_num->self->dat;
     new_num->len = N->len;
+    new_num->add = N->add;
     new_num->copy = N->copy;
     new_num->resz = N->resz;
     new_num->free = N->free;
