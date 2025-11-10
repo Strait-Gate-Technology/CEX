@@ -15,7 +15,7 @@ typedef struct cex_obj {
     void* dat;
     size_t len;
     struct cex_obj* (*copy)(struct cex_obj*);
-    void (*resize)(struct cex_obj*, size_t);
+    void (*resz)(struct cex_obj*, size_t);
     void (*free)(struct cex_obj*);
 } OBJ;
 
