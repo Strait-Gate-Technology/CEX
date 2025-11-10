@@ -29,6 +29,12 @@ NUM* cex_copy_num(NUM* N)
     return new_num;
 }
 
+void cex_resz_num(NUM* N, size_t len)
+{
+    RESZ(N->self, len * sizeof(int));
+    N->len = len;
+}
+
 void cex_free_num(NUM* N)
 {
     FREE(N->self);
