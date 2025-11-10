@@ -45,15 +45,29 @@ void cex_free_num(NUM* N)
     free(N);
 }
 
-/* Little endian */
 void cex_add_nums(NUM* A, NUM* B)
 {
-    int i, aWasPos, bWasPos;
+    int i, sum, carry;
+    int high_bit_A, high_bit_B, high_bit_sum;
 
-    aWasPos = (A->nums[0] >= 0);
-    bWasPos = (B->nums[0] >= 0);
-    for (i = 0; i < A->len && i < B->len; A->nums[i] += B->nums[i], i++) {
-        aWasPos = (A->nums[i] >= 0);
-        bWasPos = (B->nums[i] >= 0);
+    /* Sum little endian */
+    carry = 0;
+    for (i = 0; i < A->len && i < B->len; i++) {
+        sum = A->nums[i] + B->nums[i] + carry;
+
+        high_bit_A = (A->nums[i] >> (sizeof(int) * 8 - 1));
+        high_bit_B = (B->nums[i] >> (sizeof(int) * 8 - 1));
+        high_bit_sum = (sum >> (sizeof(int) * 8 - 1));
+
+        carry = (high_bit_A | high_bit_B) & ~high_bit_sum;
+
+        A->nums[i] = sum;
+    } /* DO NOT REUSE i */
+    /* Expand if necessary */
+    if (A->len < (B->len + carry)) {
+        RESZ(A, B->len + carry);
     }
+    /* Add outstanding carry */
+    A->nums[i] += carry;
+    /* Done */
 }

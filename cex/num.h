@@ -6,6 +6,7 @@
 
 /* Shorthand Macros */
 #define NUM(i) cex_make_num(i)
+#define ADD(A, B) A->add(A, B)
 
 /* Number */
 typedef struct cex_num {
