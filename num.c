@@ -4,11 +4,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-NUM* cex_make_num(int i)
+NUM* cex_make_num(unsigned int i)
 {
     NUM* new_num;
     new_num = malloc(sizeof(NUM));
-    new_num->self = OBJ(sizeof(int));
+    new_num->self = OBJ(sizeof(unsigned int));
     new_num->nums = new_num->self->dat;
     new_num->nums[0] = i;
     new_num->len = 1;
@@ -35,7 +35,7 @@ NUM* cex_copy_num(NUM* N)
 
 void cex_resz_num(NUM* N, size_t len)
 {
-    RESZ(N->self, len * sizeof(int));
+    RESZ(N->self, len * sizeof(unsigned int));
     N->len = len;
 }
 
@@ -47,8 +47,8 @@ void cex_free_num(NUM* N)
 
 void cex_add_nums(NUM* A, NUM* B)
 {
-    int i, sum, carry;
-    int high_bit_A, high_bit_B, high_bit_sum;
+    unsigned int i, sum, carry;
+    unsigned int high_bit_A, high_bit_B, high_bit_sum;
 
     /* Sum little endian */
     carry = 0;

@@ -11,7 +11,7 @@
 /* Number */
 typedef struct cex_num {
     OBJ* self;
-    int* nums;
+    unsigned int* nums;
     size_t len;
     void (*add)(struct cex_num*, struct cex_num*);
     struct cex_num* (*copy)(struct cex_num*);
@@ -20,7 +20,7 @@ typedef struct cex_num {
 } NUM;
 
 /* Number methods */
-NUM* cex_make_num(int i);
+NUM* cex_make_num(unsigned int i);
 NUM* cex_copy_num(NUM* N);
 void cex_resz_num(NUM* N, size_t len);
 void cex_free_num(NUM* N);
