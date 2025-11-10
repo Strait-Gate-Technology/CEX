@@ -68,6 +68,10 @@ void cex_add_nums(NUM* A, NUM* B)
         RESZ(A, B->len + carry);
     }
     /* Add outstanding carry */
+    /* NOTE:    it must be done this way because
+                A might be HUGE but still necessitate
+                a carry-add to the i'th element after
+                the for-loop.*/
     if (carry) {
         A->nums[i] += carry;
     }
