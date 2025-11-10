@@ -107,6 +107,7 @@ This is very much like what a lot of object models propose without being utter g
 ## TODO
 
 - Create generics for ADD, SUB, MUL, DIV, such that they call corresponding ->add(), ->sub(), so on; with 2 parameters,
+- Try and compile (convert) the project to be C89 compliant...may not be possible with certain design goals in mind.
 - Create MAT \* matrix type. Apply generics to these matrices as well.
 - Creates "vectors" but like dynamic array containers for OBJ. Maybe call them VEC\* and allow pushing and popping with the generics PUSH() and POP().
 - Once this is done for ->copy() and ->free(), consider string processing cases or move straight to WEB.
