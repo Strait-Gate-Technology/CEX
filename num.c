@@ -68,6 +68,8 @@ void cex_add_nums(NUM* A, NUM* B)
         RESZ(A, B->len + carry);
     }
     /* Add outstanding carry */
-    A->nums[i] += carry;
+    if (carry) {
+        A->nums[i] += carry;
+    }
     /* Done */
 }
