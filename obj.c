@@ -26,6 +26,7 @@ OBJ* cex_copy_obj(OBJ* O)
     new_obj->free = O->free;
     return new_obj;
 }
+/* NOTE: Method pointers from O kept purposely to allow inheritance */
 
 void cex_resz_obj(OBJ* O, size_t len)
 {
